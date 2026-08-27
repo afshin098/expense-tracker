@@ -35,6 +35,16 @@ def show_expense():
         print(f"{id}. {expense.title} - {expense.amount} - {expense.category}")
 
 
+def delete_expense():
+    option = int(input("Select a Index to delete: ")) - 1
+    selected_item = expense_list.pop(option)
+    print(
+        f"You Are Deleting {selected_item.title} - {selected_item.amount} - {selected_item.category}"
+    )
+
+
+expense_list.append(Expense("test1", 800000, "aa"))
+expense_list.append(Expense("test2", 50000000, "bb"))
 while True:
     menu()
     option = int(input("Choose an option: "))
@@ -43,6 +53,9 @@ while True:
         add_expense()
     elif option == 2:
         show_expense()
+    elif option == 3:
+        show_expense()
+        delete_expense()
     elif option == 5:
         print("Bye!")
         break
