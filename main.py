@@ -43,8 +43,6 @@ def delete_expense():
     )
 
 
-expense_list.append(Expense("test1", 800000, "aa"))
-expense_list.append(Expense("test2", 50000000, "bb"))
 while True:
     menu()
     option = int(input("Choose an option: "))
