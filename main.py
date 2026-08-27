@@ -43,6 +43,13 @@ def delete_expense():
     )
 
 
+def show_total():
+    total = 0
+    for expense in expense_list:
+        total += expense.amount
+    print(f"===== Total: {total} =====")
+
+
 while True:
     menu()
     option = int(input("Choose an option: "))
@@ -54,6 +61,8 @@ while True:
     elif option == 3:
         show_expense()
         delete_expense()
+    elif option == 4:
+        show_total()
     elif option == 5:
         print("Bye!")
         break
